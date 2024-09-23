@@ -1,0 +1,81 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$dark-card-bg: #14291d;
+$dark-card-border: #2d2d2d;
+$dark-card-color: #e0e0e0;
+$accent-color: #54ae99;
+
+// Custom color mode variables
+body[data-bs-theme="dark"] {
+    --bs-body-color: #{$white} !important;
+    --bs-body-bg: #050703 !important;
+    --bs-primary: #69ae42 !important;
+    --bs-secondary: #3d6e21 !important;
+    --bs-success: #00c853 !important;
+    --bs-info: #3700b3 !important;
+    --bs-warning: #ffab00 !important;
+    --bs-danger: #cf6679 !important;
+    --bs-light: #2c2c2c !important;
+    --bs-dark: #e0e0e0 !important;
+
+    background-color: var(--bs-body-bg) !important;
+    color: var(--bs-body-color) !important;
+
+    .card {
+        background-color: $dark-card-bg;
+        border-color: $dark-card-border;
+        color: $dark-card-color;
+
+        .card-header,
+        .card-footer {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: $dark-card-border;
+        }
+
+        .card-title {
+            color: lighten($dark-card-color, 15%);
+        }
+
+        .card-subtitle {
+            color: darken($dark-card-color, 15%);
+        }
+
+        .card-link {
+            color: map-get($theme-colors, "primary");
+
+            &:hover {
+                color: darken(map-get($theme-colors, "primary"), 15%);
+            }
+        }
+    }
+}
+
+$theme-colors: (
+    "primary": #bad19e,
+    "secondary": #39785b,
+    "success": #00c853,
+    "info": #3700b3,
+    "warning": #ffab00,
+    "danger": #cf6679,
+    "light": #2c2c2c,
+    "dark": #e0e0e0
+);
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
